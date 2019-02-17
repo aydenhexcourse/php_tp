@@ -3,7 +3,7 @@
     if(isset($_SESSION['connexion']) && $_SESSION['connexion'] == true) {
         if (isset($_GET['id'])) {
             try {
-                include("../pdo.php");
+                include("pdo.php");
                 $result = $connexion->prepare("DELETE FROM Acces WHERE id= :id");
                 $result->bindValue(":id", $_GET['id'], PDO::PARAM_INT);
                 $result->execute();
